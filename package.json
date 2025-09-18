@@ -1,0 +1,30 @@
+{
+  "name": "shopdemo",
+  "version": "1.0.0",
+  "description": "E-commerce full-stack demo application",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start",
+    "build": "cd frontend && npm run build",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "setup": "node scripts/setup.js",
+    "db:import": "mysql -u root -p shopdemo < database/schema.sql",
+    "db:demo": "mysql -u root -p shopdemo < database/demo-data.sql",
+    "db:reset": "node scripts/reset-database.js",
+    "db:init": "node scripts/init-database.js"
+  },
+  "keywords": [
+    "ecommerce",
+    "react",
+    "nodejs",
+    "mysql",
+    "stripe"
+  ],
+  "author": "Vince",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
